@@ -108,17 +108,14 @@ module MakeStack (Element: SERIALIZE) : (STACK with type element = Element.t) =
 
     let empty () : stack = []
 
-    let push (el: element) (s: stack) : stack =
-      failwith "not implemented"
+    let push (el: element) (s: stack) : stack = el :: s
 
     let pop_helper (s: stack) : (element * stack) =
       failwith "not implemented"
 
-    let top (s: stack) : element =
-      failwith "not implemented"
+    let top (s: stack) : element = List.hd s
 
-    let pop (s: stack) : stack =
-      failwith "not implemented"
+    let pop (s: stack) : stack = List.tl s
 
     let map (f: element -> element) (s: stack) : stack =
       failwith "not implemented"

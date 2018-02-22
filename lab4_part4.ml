@@ -75,19 +75,17 @@ module Queue : QUEUE =
   struct
     exception EmptyQueue
 
-    type 'a queue = 'a      (* replace this with the correct 
+    type 'a queue = 'a list      (* replace this with the correct 
                                implementation type *)
 
-    let empty () : 'a queue =
-      failwith "not implemented"
+    let empty () : 'a queue = []
 
-    let enqueue (el : 'a) (q : 'a queue) =
-      failwith "not implemented"
+    let enqueue (el : 'a) (q : 'a queue) = el :: q
 
     (* dequeue_helper q -- Returns a pair of the front element of the
        queue and a queue containing the remaining elements *)
     let dequeue_helper (q : 'a queue) : ('a * 'a queue) =
-      failwith "not implemented"
+      (List.hd q, List.tl q)
 
     let front (q: 'a queue) : 'a =
       fst (dequeue_helper q)
@@ -115,7 +113,10 @@ your Queue module to return a new queue with the following strings
 enqueued in order: "Computer", "Science", "51".
 ......................................................................*)
 
-let q = fun _ -> failwith "not implemented" ;;
+let q = fun _ -> 
+          let open Queue in
+          enqueue "51" (enqueue "Science" (enqueue "Computer" (empty ()))) ;; 
+
 
 (*......................................................................
 Exercise 4C: Write an expression to generate a queue with the q
