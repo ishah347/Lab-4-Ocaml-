@@ -1,12 +1,5 @@
 
-## lab4
+## Modules-and-Functors-Ocaml
 
-Before you start working, add the extra remote repository for lab4. To do so, run:
-
-`git remote add distribution git@github.com:cs51/lab4.git`
-
-To check for updates, run:
-
-`git pull distribution master`
-
-You should run this periodically to check for updates.
+Practice with concepts of modules, including files as modules,
+signatures, polymorphic abstract types, and functors.
